@@ -1,0 +1,63 @@
+### Get Contacts
+GET http://localhost:8000/api/contacts HTTP/1.1
+
+### Get Specific Contact
+GET http://localhost:8000/api/contacts/4 HTTP/1.1
+
+### Get Invalid Specific Contact
+GET http://localhost:8000/api/contacts/x HTTP/1.1
+
+### Save Contact
+POST http://localhost:8000/api/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Wildan M Zaki",
+    "email": "wildanmzaki984@gmail.com",
+    "telephone_number": 6289619925691
+}
+
+### Save Contact with wrong payload test, next the response include the error from validation
+POST http://localhost:8000/api/contacts HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "wildanmzaki7@gmail.com",
+    "telephone_number": 628961691
+}
+
+### Update Contact
+PUT http://localhost:8000/api/contacts/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Zaki",
+    "email": "zaki984@gmail.com",
+    "telephone_number": 6289644441212
+}
+
+### Update Contact with invalid id
+PUT http://localhost:8000/api/contacts/x HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Wildan M Zaki",
+    "email": "wildanmzaki984@gmail.com",
+    "telephone_number": 6289619925691
+}
+
+### Update Contact with wrong payload test, next the response include the error from validation
+PUT http://localhost:8000/api/contacts/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "wildanmzaki7@gmail.com",
+    "telephone_number": 628961691
+}
+
+### Delete Specific Contact
+DELETE http://localhost:8000/api/contacts/1 HTTP/1.1
+
+### Delete Invalid Specific Contact
+DELETE http://localhost:8000/api/contacts/x HTTP/1.1
+
